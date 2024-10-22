@@ -5,4 +5,8 @@ During my graudate study, I was studying the theory of the mind at first. Mostly
 The second part of my study was on neuromodulatory system in the brain, mostly the theory and neuromechanism of a.) exploration and exploitation problem or sometimes refered to as the bayesian RL and b.) model-based and model-free in the brain. 
 
 
-[First Part](https://docs.google.com/presentation/d/1jPPnCfTKtLa-FB4haYS3q-Nw1tRfzGPv/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
+[First and second Part](https://docs.google.com/presentation/d/1jPPnCfTKtLa-FB4haYS3q-Nw1tRfzGPv/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
+
+[Third Part](https://docs.google.com/presentation/d/1sCNji51QUQItBJBHxFXrNFq6mAAnAGI1/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
+
+[unfinished graduate study thesis](https://drive.google.com/file/d/1jariPMU7iGL-CjnGvYbMNb_OPeQ67wKm/view?usp=sharing)
