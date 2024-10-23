@@ -1,4 +1,5 @@
 ## summary of my study at OIST
+[unfinished graduate study thesis](https://drive.google.com/file/d/1jariPMU7iGL-CjnGvYbMNb_OPeQ67wKm/view?usp=sharing)
 
 During my graudate study, I was studying the theory of the mind at first. Mostly by investigating the duality of formal system and probablistic system. More specifically, boolean algebra with statement evaluation (to bool true or false) is dual to probablistic system with probablistic measure(to real numbers between 0 and 1), this correspondence can be formalised via category theory. Causually speaking, seeing probablistic inference as a "soft" or "relaxed" version of the formal logic. We then can use category theory to study the relation/morphism between them and amomng the systems in the category of inference systems. Neural network is well known for it's probablistic characteristic, eg. the very early single neuron models is assembled by logistic regession, what is the link between neural networks and inference systems? Much like the halting problem, we ask the problem of determing from a description of a inference system, weather it can "construct" a new inference system that is a "superset" or "more capable" of the first. More concretly, a not so good example could be a LLM that takes a list of string blobs, we ask it to give us a new LLM that is more "capable" than itself (my study had nothing to do with LLM, I'm just using it as a example). It is a inference system in the sense the statement evaluator is now a probability meausre over a ordered marginal distribution of N joint variables, which each variable is a word. In addition it's different from traininf a LLM from another LLM, our question is more related to artificial creativity. Of course, the definitions of those words such as "construct", "more capable" needs further study. I'm sure people have studied it before, but since my main interest is neural interface and with my limited mathematical knowledge and pandemic, I've decided to give up, but I do hope more capable individuals can continue this investigation.
 
@@ -6,4 +7,6 @@ The second part of my study was on neuromodulatory system in the brain, mostly t
 
 
 [First and second Part](https://docs.google.com/presentation/d/1jPPnCfTKtLa-FB4haYS3q-Nw1tRfzGPv/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
+
+[Third Part](https://docs.google.com/presentation/d/1sCNji51QUQItBJBHxFXrNFq6mAAnAGI1/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
 
