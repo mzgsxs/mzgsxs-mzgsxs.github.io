@@ -26,7 +26,7 @@ ROOT/
 └── tests/
     └── test_EXAMPLE.py
 ```
-`pyproject.toml` specifies the metadata/info for the project, I use poetry to automate it.
+[`pyproject.toml`](https://peps.python.org/pep-0621/) specifies the metadata/info for the project, I use poetry to automate it.
 
 
 #### Lint
