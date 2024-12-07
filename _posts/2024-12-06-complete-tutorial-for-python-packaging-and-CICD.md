@@ -8,7 +8,7 @@ There are many tutorials online for `Python` packageing and devops, but most of 
 ### Components
 Tech stacks:
 1. pdm
-2. 
+2. keyring
 3. 
 4. 
 
@@ -46,8 +46,12 @@ For version control, gitignore has also been generated automatically. To publish
 ```bash
 pdm publish --repository testpypi --password PYPI_TOKEN
 ```
-It's a twine wrapper.
+It's a twine wrapper and wheel file is really just a ZIP file
 
+
+#### Security
+If there is any authetication/sensitive infomation required for this package and repo is opensourced, we need a way to manage those keys. 
+If the code need to be deployed in multiple machines/servers, I will probably need to use AWS Secrets Manager. 
 
 
 
