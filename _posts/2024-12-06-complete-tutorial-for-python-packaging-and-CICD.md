@@ -9,7 +9,7 @@ There are many tutorials online for `Python` packageing and devops, but most of 
 Tech stacks:
 1. pdm
 2. keyring
-3. 
+3. ruff
 4. 
 
 #### Packaging, Publishing and dependency and enviroment management (pdm)
@@ -44,6 +44,7 @@ pdm init
 pdm add DEPENDENCY_PACKAGE
 pdm add DEV_DEPENDENCY_PACKAGE --group dev
 pdm remove DEPENDENCY_PACKAGE
+pdm remove DEV_DEPENDENCY_PACKAGE --group dev
 ```
 [uv](https://docs.astral.sh/uv/) can be used as the package manager backend, but setup is [required](https://pdm-project.org/latest/usage/uv/). `pyproject.toml` will be automatically updated. To list packages install in `.venv` ( if not using [PEP 582](https://pdm-project.org/en/latest/usage/pep582/) )
 ```bash
@@ -51,7 +52,8 @@ pdm list
 ```
 For version control, gitignore has also been generated automatically. To publish to test pypi server
 ```bash
-pdm publish --repository testpypi --password PYPI_TOKEN
+pdm build
+pdm publish --no-build --repository testpypi --password PYPI_TOKEN
 ```
 It's a twine wrapper and wheel file is really just a ZIP file
 
@@ -62,8 +64,45 @@ If the code need to be deployed in multiple machines/servers, I will probably ne
 
 
 
-#### Lint
+#### Lint & Formating
+Ruff (Rust based) can fix:
+<ol>
+  <li> Imports </li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ol>
 
+```
+pdm add ruff --group dev
+```
+Manually add the following to `pyproject.toml`
+```
+[tool.ruff]
+line-length = 88
+exclude = ["build/", "docs/"]
+select = ["E", "F", "UP", "B", "SIM", "I"]
+
+[tool.ruff.lint]
+extend-select = ["E501"]
+```
+<ol>
+  <li>`E`: Pycodestyle errors (e.g., whitespace issues, PEP8 violations).
+  <li>`F`: Pyflakes errors (e.g., undefined variables, unused imports).
+  <li>`UP`: Rules for upgrading Python syntax (e.g., replacing deprecated syntax).
+  <li>`B`: flake8-bugbear rules (e.g., detecting likely bugs or design issues).
+  <li>`SIM`: flake8-simplify rules (e.g., suggesting simpler constructs for clarity).
+  <li>`I`: Import-related rules (e.g., ensuring imports are sorted).
+  <li>`E501` is a Pycodestyle rule that enforces a maximum line length limit.
+</ol>
+
+```
+pdm run ruff check --fix 
+```
+
+```
+pdm run ruff format
+```
 
 #### Testing
 
