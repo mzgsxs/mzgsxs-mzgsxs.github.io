@@ -66,6 +66,7 @@ Ruff (Rust based, fast) can fix:
   <li> import errors and sorting </li>
   <li> deprecated Syntax </li>
   <li> doc-strings formating </li>
+  <li> Enforcing PEP8 Style </li>
   <li> ... </li>
 </ol>
 
