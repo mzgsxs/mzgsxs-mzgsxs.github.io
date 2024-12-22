@@ -78,10 +78,9 @@ Manually add the following to `pyproject.toml`
 [tool.ruff]
 line-length = 88
 exclude = ["build/", "docs/"]
-select = ["E", "F", "UP", "B", "SIM", "I"]
 
 [tool.ruff.lint]
-extend-select = ["E501"]
+extend-select = ["E501", "E", "F", "UP", "B", "SIM", "I"]
 ```
 <ol>
   <li>`E`: Pycodestyle errors (e.g., whitespace issues, PEP8 violations).
