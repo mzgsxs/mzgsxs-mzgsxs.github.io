@@ -104,6 +104,9 @@ pdm run ruff format
 ```
 pdm add pytest --group dev
 ```
+```
+pdm run pytest
+```
 
 #### Publishing
 To publish to test pypi server
