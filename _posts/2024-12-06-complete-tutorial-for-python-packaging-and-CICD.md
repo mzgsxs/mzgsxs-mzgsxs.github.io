@@ -27,6 +27,13 @@ ROOT/
     ├── __init__.py
     └── test_EXAMPLE.py
 ```
+Install (and use) or remove a specific python version
+```
+pdm python install 3.9.8
+pdm python list
+pdm python remove 3.9.8
+```
+
 [`pyproject.toml`](https://peps.python.org/pep-0621/) specifies the metadata/info for the project.
 Start from inside empty `ROOT` directory, use pdm to automate this:
 ```bash
