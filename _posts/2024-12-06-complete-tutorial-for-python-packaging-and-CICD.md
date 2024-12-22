@@ -61,12 +61,12 @@ If the code need to be deployed in multiple machines/servers, I will probably ne
 
 
 #### Lint & Formating
-Ruff (Rust based) can fix:
+Ruff (Rust based, fast) can fix:
 <ol>
-  <li> Imports </li>
-  <li>Second item</li>
-  <li>Third item</li>
-  <li>Fourth item</li>
+  <li> import errors and sorting </li>
+  <li> deprecated Syntax </li>
+  <li> doc-strings formating </li>
+  <li> ... </li>
 </ol>
 
 ```
