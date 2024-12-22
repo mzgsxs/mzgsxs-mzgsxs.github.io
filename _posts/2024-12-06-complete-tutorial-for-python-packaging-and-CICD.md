@@ -10,9 +10,10 @@ Tech stacks:
 1. pdm
 2. keyring
 3. ruff
-4. 
+4. pytest
+5. 
 
-#### Packaging, Publishing and dependency and enviroment management (pdm)
+#### Packaging and dependency and enviroment management (pdm)
 Minimal structure required for packaging is as follows:
 ```
 ROOT/
@@ -50,12 +51,7 @@ pdm remove DEV_DEPENDENCY_PACKAGE --group dev
 ```bash
 pdm list
 ```
-For version control, gitignore has also been generated automatically. To publish to test pypi server
-```bash
-pdm build
-pdm publish --no-build --repository testpypi --password PYPI_TOKEN
-```
-It's a twine wrapper and wheel file is really just a ZIP file
+For version control, gitignore has also been generated automatically. 
 
 
 #### Security
@@ -105,10 +101,17 @@ pdm run ruff format
 ```
 
 #### Testing
-
+```
+pdm add pytest --group dev
+```
 
 #### Publishing
-
+To publish to test pypi server
+```bash
+pdm build
+pdm publish --no-build --repository testpypi --password PYPI_TOKEN
+```
+It's a twine wrapper and wheel file is really just a ZIP file
 
 #### Documentation
 
