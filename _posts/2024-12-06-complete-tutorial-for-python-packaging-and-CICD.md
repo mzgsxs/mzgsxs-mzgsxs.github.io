@@ -117,5 +117,8 @@ pdm publish --no-build --repository testpypi --password PYPI_TOKEN
 It's a twine wrapper and wheel file is really just a ZIP file
 
 #### Documentation
+Sphinx will be used, why? -> cross-references feature & expandability
+
+
 
 ### Notes
