@@ -17,5 +17,5 @@ The last part of my study was on neuro-evolution. The basic idea is to evolve ne
 [Third Part](https://docs.google.com/presentation/d/1sCNji51QUQItBJBHxFXrNFq6mAAnAGI1/edit?usp=sharing&ouid=112627724459090659537&rtpof=true&sd=true)
 
 
-My opinion is intelligence is meaningless without the environment, just like words are meaningless without a context, intelligence is a signifier that can only be signified in an enviroment. Many would say adaptability is a better measure of an intelligence, such concept are abundant in machine learning such as leave-one-out, train/test split, transfer learning or few-shot learning.   
+My opinion is intelligence is meaningless without the environment, just like words are meaningless without a context, intelligence is a signifier that can only be signified in an enviroment.   
 
