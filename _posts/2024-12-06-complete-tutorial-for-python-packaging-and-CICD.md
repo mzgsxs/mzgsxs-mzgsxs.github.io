@@ -92,9 +92,11 @@ extend-select = ["E501"]
   <li>`I`: Import-related rules (e.g., ensuring imports are sorted).
   <li>`E501` is a Pycodestyle rule that enforces a maximum line length limit.
 </ol>
+
 ```
 pdm run ruff check --fix 
 ```
+
 ```
 pdm run ruff format
 ```
