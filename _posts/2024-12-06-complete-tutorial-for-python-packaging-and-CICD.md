@@ -1,4 +1,4 @@
-## complete-template-for-Python-packaging-and-CI/CD
+## Template for Python packaging and CI/CD
 
 There are many tutorials online for `Python` packageing and devops, but most of them only cover part of the picture. Discussion of the pros and cons of [different packaging tools](https://alpopkes.com/posts/python/packaging_tools/?utm_source=perplexity) and tech stack for python devops is not the concernt of this post, I only use this blog to remind myself one minimal functional template for my Python projects. 
 
