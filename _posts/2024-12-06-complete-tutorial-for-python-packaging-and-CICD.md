@@ -92,18 +92,21 @@ extend-select = ["E501", "E", "F", "UP", "B", "SIM", "I"]
   <li>`E501` is a Pycodestyle rule that enforces a maximum line length limit.
 </ol>
 
+And
 ```
 pdm run ruff check --fix 
 ```
-
+And
 ```
 pdm run ruff format
 ```
 
 #### Testing
+Test 
 ```
 pdm add pytest --group dev
 ```
+And
 ```
 pdm run pytest
 ```
