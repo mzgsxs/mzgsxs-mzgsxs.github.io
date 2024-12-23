@@ -11,7 +11,8 @@ Tech stacks:
 2. [keyring](https://github.com/jaraco/keyring)
 3. [ruff](https://docs.astral.sh/ruff/) 
 4. [pytest](https://docs.pytest.org/en/stable/index.html)
-5. [github-actions](https://docs.github.com/en/actions)
+5. [sphinx](https://www.sphinx-doc.org/en/master/index.html)
+6. [github-actions](https://docs.github.com/en/actions)
 
 #### Packaging and dependency and enviroment management (pdm)
 Minimal structure required for packaging is as follows:
@@ -149,13 +150,13 @@ def fn(a: int, b: int) -> int:
     Bla bla
 
     Args:
-        a (int): dika.
-        b (int): laka.
+        a (int): aaa
+        b (int): bbb
 
     Returns:
-        int: wowowo.
+        int: ccc
     """
-    return a + b
+    return a*(a + b) + b
 
 ```
 
@@ -173,7 +174,7 @@ sys.path.insert(0, os.path.abspath('../src/YOUR_PKG'))
 
 After each code modification, run the following to update the documentation
 ```
-cd src
+cd docs
 pdm run make html
 cd ..
 ```
