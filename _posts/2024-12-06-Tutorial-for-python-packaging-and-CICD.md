@@ -8,7 +8,7 @@ There are many tutorials online for `Python` packaging and dev-ops, but most of 
 ### Components
 Tech stacks:
 1. [pdm](https://pdm-project.org/en/latest/)
-2. keyring
+2. [keyring](https://github.com/jaraco/keyring)
 3. [ruff](https://docs.astral.sh/ruff/) 
 4. [pytest](https://docs.pytest.org/en/stable/index.html)
 5. [github-actions](https://docs.github.com/en/actions)
