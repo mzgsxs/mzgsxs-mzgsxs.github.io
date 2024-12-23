@@ -111,6 +111,7 @@ And
 pdm run pytest
 ```
 
+
 #### Publishing
 To publish to test pypi server
 ```bash
@@ -119,8 +120,70 @@ pdm publish --no-build --repository testpypi --password PYPI_TOKEN
 ```
 It's a twine wrapper and wheel file is really just a ZIP file
 
+
 #### Documentation
-Sphinx will be used, why? -> cross-references feature & expandability
+Sphinx will be used, for it's cross-references feature & expandability
+```
+pdm add sphinx sphinx-autobuild --group dev
+```
+Init docs
+```
+pdm run sphinx-quickstart docs
+```
+Add this to `docs/conf.py` 
+```
+extensions = [
+    'sphinx.ext.autodoc',        # Automatically document code from docstrings
+    'sphinx.ext.napoleon',       # Support for Google-style and NumPy-style docstrings
+    'sphinx.ext.viewcode',       # Add links to source code in documentation
+]
+```
+Example docstring:
+```python
+"""
+Bla Bla Bla
+"""
+
+def fn(a: int, b: int) -> int:
+    """
+    Bla bla
+
+    Args:
+        a (int): dika.
+        b (int): laka.
+
+    Returns:
+        int: wowowo.
+    """
+    return a + b
+
+```
+
+Specify code to doc by 
+```
+pdm run sphinx-apidoc -o docs/source src/YOUR_PKG
+```
+Or add the following to `docs/conf.py` 
+```
+# Path to your Python code relative to the `docs/` directory
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../src/YOUR_PKG'))
+```
+
+After each code modification, run the following to update the documentation
+```
+cd src
+pdm run make html
+cd ..
+```
+Or to automatically rebuild and serve your docs localy while developing/editing
+```
+pdm run sphinx-autobuild docs docs/_build/html
+```
+
+
+
 
 
 
