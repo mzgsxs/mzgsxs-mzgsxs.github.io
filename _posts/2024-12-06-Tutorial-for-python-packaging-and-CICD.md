@@ -215,12 +215,21 @@ Include `README.md` by adding this to `index.rst`
 
 
 ## Publishing
+### Python wheel
 To publish to test pypi server
 ```
 pdm build
 pdm publish --no-build --repository testpypi --password PYPI_TOKEN
 ```
 It's a twine wrapper and wheel file is really just a ZIP file
+
+### Github release
+
+
+
+### Documentation host
+
+
 
 
 ## Notes
