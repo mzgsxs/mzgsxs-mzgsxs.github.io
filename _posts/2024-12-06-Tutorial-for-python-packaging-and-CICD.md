@@ -98,7 +98,7 @@ And
 pdm run ruff format
 ```
 
-### Testing
+## Testing
 Test 
 ```
 pdm add pytest --group dev
@@ -107,16 +107,6 @@ And
 ```
 pdm run pytest
 ```
-
-
-## Publishing
-To publish to test pypi server
-```
-pdm build
-pdm publish --no-build --repository testpypi --password PYPI_TOKEN
-```
-It's a twine wrapper and wheel file is really just a ZIP file
-
 
 ## Documentation
 
@@ -222,6 +212,15 @@ Include `README.md` by adding this to `index.rst`
 .. include:: ../../README.md
     :parser: myst_parser.sphinx_
 ```
+
+
+## Publishing
+To publish to test pypi server
+```
+pdm build
+pdm publish --no-build --repository testpypi --password PYPI_TOKEN
+```
+It's a twine wrapper and wheel file is really just a ZIP file
 
 
 ## Notes
