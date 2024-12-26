@@ -81,15 +81,13 @@ exclude = ["build/", "docs/"]
 [tool.ruff.lint]
 extend-select = ["E501", "E", "F", "UP", "B", "SIM", "I"]
 ```
-<ol>
-  <li>`E`: Pycodestyle errors (e.g., whitespace issues, PEP8 violations).
-  <li>`F`: Pyflakes errors (e.g., undefined variables, unused imports).
-  <li>`UP`: Rules for upgrading Python syntax (e.g., replacing deprecated syntax).
-  <li>`B`: flake8-bugbear rules (e.g., detecting likely bugs or design issues).
-  <li>`SIM`: flake8-simplify rules (e.g., suggesting simpler constructs for clarity).
-  <li>`I`: Import-related rules (e.g., ensuring imports are sorted).
-  <li>`E501` is a Pycodestyle rule that enforces a maximum line length limit.
-</ol>
+1. `E`: Pycodestyle errors (e.g., whitespace issues, PEP8 violations).
+2. `F`: Pyflakes errors (e.g., undefined variables, unused imports).
+3. `UP`: Rules for upgrading Python syntax (e.g., replacing deprecated syntax).
+4. `B`: flake8-bugbear rules (e.g., detecting likely bugs or design issues).
+5. `SIM`: flake8-simplify rules (e.g., suggesting simpler constructs for clarity).
+6. `I`: Import-related rules (e.g., ensuring imports are sorted).
+7. `E501` is a Pycodestyle rule that enforces a maximum line length limit.
 
 And
 ```
@@ -100,7 +98,7 @@ And
 pdm run ruff format
 ```
 
-### Testing
+## Testing
 Test 
 ```
 pdm add pytest --group dev
@@ -109,16 +107,6 @@ And
 ```
 pdm run pytest
 ```
-
-
-## Publishing
-To publish to test pypi server
-```
-pdm build
-pdm publish --no-build --repository testpypi --password PYPI_TOKEN
-```
-It's a twine wrapper and wheel file is really just a ZIP file
-
 
 ## Documentation
 
@@ -224,6 +212,15 @@ Include `README.md` by adding this to `index.rst`
 .. include:: ../../README.md
     :parser: myst_parser.sphinx_
 ```
+
+
+## Publishing
+To publish to test pypi server
+```
+pdm build
+pdm publish --no-build --repository testpypi --password PYPI_TOKEN
+```
+It's a twine wrapper and wheel file is really just a ZIP file
 
 
 ## Notes
