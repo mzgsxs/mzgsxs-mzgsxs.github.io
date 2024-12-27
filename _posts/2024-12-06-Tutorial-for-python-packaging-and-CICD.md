@@ -225,11 +225,13 @@ It's a twine wrapper and wheel file is really just a ZIP file
 
 ### Github release
 
-
-
 ### Documentation host
-
-
+Put all required python packages in `docs/requirements.txt`
+```
+myst_parser
+```
+Use a [modified version](https://github.com/mzgsxs/ci-cd-test/blob/main/.github/workflows/gh-pages.yml) of [pages file](https://github.com/marketplace/actions/sphinx-to-github-pages). 
+Place it in `.github/workflows/` folder. Makesure in your repo's `Settings` -> `Code and automation` -> `Pages`, `Build and deployment` -> `Source`, `GitHub Actions` is selected.
 
 
 ## Notes
