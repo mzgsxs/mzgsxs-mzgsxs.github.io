@@ -105,7 +105,7 @@ pdm add pytest --group dev
 ```
 And
 ```
-pdm run pytest
+pdm run -v --cov=arithmetics
 ```
 
 ## Documentation
