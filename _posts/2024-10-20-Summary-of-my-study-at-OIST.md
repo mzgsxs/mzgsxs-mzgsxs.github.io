@@ -1,4 +1,4 @@
-## summary of my study at OIST
+## Summary of my study at OIST
 [Unfinished OIST thesis](https://drive.google.com/file/d/1jariPMU7iGL-CjnGvYbMNb_OPeQ67wKm/view?usp=sharing)
 
 
