@@ -12,7 +12,45 @@ but is this performance a result from the regular shader cores? I need test it t
 
 
 ## Monitoring
+The easiest way is to compare the numerical result:
+```python
+import torch
+import torch.profiler
 
+matrix_size = 2<<12  # Large enough to utilize Tensor Cores optimally
+
+A = torch.randn((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
+B = torch.randn((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
+
+def test():
+    with torch.profiler.profile(
+        activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
+        on_trace_ready=torch.profiler.tensorboard_trace_handler('./log'),
+        record_shapes=True,
+        with_stack=True
+    ) as prof:
+        # Run your training code here
+        # Generate two large random matrices on the GPU with FP32 precision
+        C_old = torch.zeros((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
+        for _ in range(100):
+            C = torch.matmul(A, B)  # Matrix multiplication using TF32 on Tensor Cores
+
+    print(prof.key_averages().table(sort_by="cuda_time_total"))
+    return C
+
+
+torch.backends.cuda.matmul.allow_tf32 = True  # Enable TF32 for matmul
+torch.backends.cudnn.allow_tf32 = True       # Enable TF32 for cuDNN operations
+C_tf32 = test()
+
+torch.backends.cuda.matmul.allow_tf32 = False  # Enable TF32 for matmul
+torch.backends.cudnn.allow_tf32 = False       # Enable TF32 for cuDNN operations
+C_fp32 = test()
+
+error = (C_tf32 - C_fp32).abs().max()
+print(f"Max absolute error between TF32 and FP32: {error}")
+
+```
 
 ## Automatic Mixed Precision package
 This is the easiest way to leverage tensor core, to allow some ops to [automatically run in lower precision](https://pytorch.org/docs/stable/amp.html).
