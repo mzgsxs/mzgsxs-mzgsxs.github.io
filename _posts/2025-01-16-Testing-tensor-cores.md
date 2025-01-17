@@ -3,7 +3,7 @@ Altough tensor-core was introduced in the RTX20s series, I have only tried it ve
 With siginificant boost of tensor cores in RTX50s series, and disappointing increase in its shader cores performance, it's worth spending some time investigating this feature. 
 I want to test if the performance of the tensor cores are comparable to odinary cuda/shader cores and wether I should upgrade to RTX5090.
 
-I'm runing all tests on my RTX3080ti, which have 320 tensor cores and [offers 136 dense and 273 sparse FP16 TFLOPS](https://en.wikipedia.org/wiki/GeForce_30_series). 
+I'm runing all tests on my RTX3080ti, which have 320 tensor cores and [offers 136 dense and 273 sparse FP16 TFLOPS](https://en.wikipedia.org/wiki/GeForce_30_series) and [34.1/68.2 TF32 TFLOPS](https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf). 
 For higher precision, tensor core typically use TF32 data type, it only have 10 bits for the significand (reduced from FP32's 23 bits), this reduction in significand bits lowers precision to about 3 decimal digits, 
 but with siginificant speedup (500 TFLOPS compares to 60 TFLOPS	for TF32 with Nvidia H100). Server GPUs have a better support for [higher precision tensorcore computations](https://www.anandtech.com/show/17327/nvidia-hopper-gpu-architecture-and-h100-accelerator-announced).
 
