@@ -19,6 +19,7 @@ import torch.profiler
 
 matrix_size = 2<<12  # Large enough to utilize Tensor Cores optimally
 
+# Generate two large random matrices on the GPU with FP32 precision
 A = torch.randn((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
 B = torch.randn((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
 
@@ -29,11 +30,10 @@ def test():
         record_shapes=True,
         with_stack=True
     ) as prof:
-        # Run your training code here
-        # Generate two large random matrices on the GPU with FP32 precision
+        # Run your code here
         C_old = torch.zeros((matrix_size, matrix_size), device='cuda', dtype=torch.float32)
         for _ in range(100):
-            C = torch.matmul(A, B)  # Matrix multiplication using TF32 on Tensor Cores
+            C = torch.matmul(A, B)  # Matrix multiplication using FP32/TF32 on Tensor Cores
 
     print(prof.key_averages().table(sort_by="cuda_time_total"))
     return C
@@ -51,7 +51,7 @@ error = (C_tf32 - C_fp32).abs().max()
 print(f"Max absolute error between TF32 and FP32: {error}")
 
 ```
-I do observe a speedup and difference in the result matrix:
+I do observe a speedup and difference in the resulting matrix:
 ```
 ---------------------------  ------------  ------------  ------------  ------------  ------------  ------------
                        Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
@@ -97,8 +97,8 @@ Max absolute error between TF32 and FP32: 0.15386199951171875
 ```
 
 ## Automatic Mixed Precision package
-This is the easiest way to leverage tensor core, to allow some ops to [automatically run in lower precision](https://pytorch.org/docs/stable/amp.html).
-I will use a standard [tutorial](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html) for testing. 
+This is the easiest way to leverage tensor core for training/inferencing, to allow some ops to [automatically run in lower precision](https://pytorch.org/docs/stable/amp.html).
+I will use the standard [tutorial](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html) for testing. 
 
 Include this to import `amp`
 ```python
